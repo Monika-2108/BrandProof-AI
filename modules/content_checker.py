@@ -5,6 +5,7 @@ from collections import Counter
 
 from dotenv import load_dotenv
 from google import genai
+import streamlit as st
 
 
 load_dotenv()
@@ -12,6 +13,12 @@ load_dotenv()
 
 def run_gemini_analysis(content, brand_profile):
     api_key = os.getenv("GEMINI_API_KEY")
+
+    if not api_key:
+        try:
+            api_key = st.secrets["GEMINI_API_KEY"]
+        except Exception:
+            api_key = None
 
     if not api_key:
         return None
@@ -269,3 +276,4 @@ def generate_compliance_report(content, brand_profile):
         "word_count": result["word_count"],
         "ai_analysis": result["ai_analysis"]
     }
+
