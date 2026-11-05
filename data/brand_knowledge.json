@@ -1,0 +1,14 @@
+{
+    "brand_name": "GlowCare",
+    "tone": "Professional",
+    "forbidden_words": [
+        "flawless skin",
+        "100% guaranteed",
+        "instant results"
+    ],
+    "required_words": [
+        "Terms and conditions apply",
+        "consult a dermatologist"
+    ],
+    "max_length": 500
+}
